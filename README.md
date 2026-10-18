@@ -47,7 +47,11 @@ Create a test item:
 - Web port binds to localhost.
 - `.env` is excluded from Git.
 - Python dependencies are pinned.
-- Image vulnerability scanning remains pending.
+- Docker Scout scan completed: health score A (94%).
+- Latest scan: 0 critical, 1 high, 1 medium, and 26 low findings.
+- Remaining findings: CVE-2026-85091 (zlib1g) and CVE-2025-45582 (tar); current Debian 13 repositories offer no candidate updates.
+- Copyleft-license policy warning remains under review.
+- SBOM and provenance generated using Docker Buildx.
 
 ## Skills Demonstrated
 
@@ -56,6 +60,7 @@ persistent volumes, health checks, troubleshooting, and basic security.
 
 ## Project Status
 
-Application, database connectivity, API operations, and persistence
-have been verified. GitHub publication and vulnerability scanning
-remain to be completed.
+Application health, database connectivity, API operations, and
+persistence have been verified. GitHub publication is complete.
+Security scanning is complete for the current image, with the
+remaining findings documented for follow-up.
