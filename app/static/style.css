@@ -759,3 +759,205 @@ button[type="submit"] {
     white-space: nowrap;
     flex-shrink: 0;
 }
+
+/* RESPONSIVE FIX - Desktop, half-window and mobile */
+
+/* Half-window and tablet */
+@media (min-width: 551px) and (max-width: 1100px) {
+    .sidebar {
+        position: fixed;
+        width: 190px;
+        height: 100vh;
+        padding: 24px 14px;
+    }
+
+    .brand {
+        gap: 6px;
+    }
+
+    .brand .docker-logo {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 28px;
+    }
+
+    .brand span:last-child {
+        font-size: 11px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        text-align: left;
+        padding: 10px 8px;
+    }
+
+    main {
+        margin-left: 190px;
+        padding: 24px;
+        min-width: 0;
+    }
+
+    .status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    #item-form {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 1 1 40%;
+        text-align: center;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-card:last-child {
+        grid-column: auto;
+    }
+}
+
+/* FINAL HALF-WINDOW RESPONSIVE CORRECTION */
+
+/* Tablet and half-window desktop */
+@media (min-width: 701px) and (max-width: 1100px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100vh;
+        padding: 24px 14px;
+        border-right: 1px solid var(--blue);
+        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand {
+        width: 100%;
+        gap: 8px;
+        margin-bottom: 40px;
+        overflow: visible;
+        white-space: nowrap;
+    }
+
+    .brand .docker-logo {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 30px;
+    }
+
+    .brand span:last-child {
+        font-size: 11px;
+        letter-spacing: 0;
+        word-spacing: 0;
+        white-space: nowrap;
+    }
+
+    .nav-label {
+        display: block;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav a {
+        flex: none;
+        text-align: left;
+        padding: 12px 10px;
+    }
+
+    main {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 22px 18px;
+        min-width: 0;
+    }
+
+    .status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    #item-form {
+        flex-wrap: wrap;
+    }
+
+    #item-form input {
+        min-width: 0;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+/* Narrow screens */
+@media (max-width: 700px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--blue);
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-card:last-child {
+        grid-column: auto;
+    }
+}
