@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCKER TWO-TIER APP | Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="brand">
+        <span class="docker-logo" role="img" aria-label="Docker"></span>
+        <span>DOCKER TWO-TIER APP</span>
+    </div>
+
+    <p class="nav-label">WORKSPACE</p>
+
+    <nav>
+        <a href="#dashboard" class="active">Overview</a>
+        <a href="#add-item">Add Item</a>
+        <a href="#items">Stored Items</a>
+        <a href="#health">System Health</a>
+    </nav>
+
+</aside>
+
+<main id="dashboard">
+    <header class="topbar">
+        <div>
+            <h1>Dashboard</h1>
+            <p>Monitor and manage your application.</p>
+        </div>
+        <span class="online-status">
+        <span class="status-dot"> </span>
+            Application Online
+        </span>
+    </header>
+
+    <section class="status-grid" id="health">
+        <div class="status-card">
+            <p>Application</p>
+            <h2 id="app-status">Checking...</h2>
+        </div>
+        <div class="status-card">
+            <p>Database</p>
+            <h2 id="db-status">Checking...</h2>
+        </div>
+        <div class="status-card">
+            <p>Total Records</p>
+            <h2 id="item-count">0</h2>
+        </div>
+    </section>
+
+    <section class="panel" id="add-item">
+        <h2>Add New Item</h2>
+        <p class="description">Save a new record to PostgreSQL.</p>
+
+        <form id="item-form">
+            <input
+                type="text"
+                id="item-name"
+                placeholder="Enter item name..."
+                maxlength="200"
+                required
+            >
+            <button type="submit" id="add-button">Add Item</button>
+        </form>
+
+        <p id="message" role="status"></p>
+    </section>
+
+    <section class="panel" id="items">
+        <h2>Stored Items</h2>
+        <p class="description">Manage your database records.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item Name</th>
+                        <th class="actions-heading">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="items-list"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>Created by Abdullah Shahid © 2026</footer>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
+
